@@ -16,5 +16,38 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("name")) {
     return ( "PaniK" );
   }
+
+  if (query.toLowerCase().includes("largest")) {
+
+    const matches = query.match(/\d+/g); 
+
+    if (matches) { 
+      const numbers = matches.map(Number); 
+ 
+      const largest = Math.max(...numbers); 
+    
+      return largest.toString();
+    } else{
+      return "Null numbers not valid."
+    }
+  }
+
+  if (query.toLowerCase().includes("plus")) {
+
+    
+    const matches = query.match(/\d+/g);
+
+    if (matches && matches.length === 2) { 
+      // Convertir los matches a números 
+      const num1 = parseInt(matches[0], 10); 
+      const num2 = parseInt(matches[1], 10); 
+
+      // Calcular la suma 
+      const sum = num1 + num2;
+
+      return sum.toString();
+    }
+  }
+
   return "";
 }

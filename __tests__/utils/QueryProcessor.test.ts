@@ -36,4 +36,20 @@ describe("QueryProcessor", () => {
     });
 
 
+    test('should return the largest', () => {
+        const query = "Which of the following numbers is the largest: 2, 23, 11?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"23"
+    	));
+    });
+
+    test('should return the sum', () => {
+        const query = "What is 1 plus 12?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"13"
+    	));
+    });
+
 });
