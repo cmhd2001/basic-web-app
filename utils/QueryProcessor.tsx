@@ -12,7 +12,6 @@ export default function QueryProcessor(query: string): string {
     // TODO actualiza el caso de prueba correspondiente en __tests__
     return ( "TU USB ID DEBERÍA ESTAR AQUÍ" );
   }
-  return "";
 
   if (query.toLowerCase().includes("name")) {
     return ( "PaniK" );
