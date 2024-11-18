@@ -13,4 +13,9 @@ export default function QueryProcessor(query: string): string {
     return ( "TU USB ID DEBERÍA ESTAR AQUÍ" );
   }
   return "";
+
+  if (query.toLowerCase().includes("name")) {
+    return ( "PaniK" );
+  }
+  return "";
 }
