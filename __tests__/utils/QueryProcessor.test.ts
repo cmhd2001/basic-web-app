@@ -52,4 +52,21 @@ describe("QueryProcessor", () => {
     	));
     });
 
+    
+    test('should return the multiplication', () => {
+        const query = "What is 3 multiplied by 4?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"12"
+    	));
+    });
+
+    test('should return the perfect 6th power', () => {
+        const query = "Which of the following numbers is both a square and a cube: 64, 1, 729, 152, 115, 343, 266?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+		"64,1,729"
+    	));
+    });
+
 });

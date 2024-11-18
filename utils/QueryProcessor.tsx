@@ -49,5 +49,35 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  if (query.toLowerCase().includes("multiplied by")) {
+
+    const matches = query.match(/\d+/g);
+
+    if (matches && matches.length === 2) { 
+      // Convertir los matches a números 
+      const num1 = parseInt(matches[0], 10); 
+      const num2 = parseInt(matches[1], 10); 
+
+      // Calcular la suma 
+      const result = num1 * num2;
+
+      return result.toString();
+    } else{
+        return "Null numbers not valid."
+    }
+  }
+  if (query.toLowerCase().includes("both a square and a cube")) { 
+    const matches = query.match(/\d+/g); 
+    if (matches) { 
+      // Convertir los matches a números y filtrar los que son sextas potencias perfectas 
+      const perfectSixthPowers = matches.map(Number).filter(num => { 
+        const root = Math.round(Math.pow(num, 1/6)); 
+        return root ** 6 === num; }); 
+      return perfectSixthPowers.toString(); 
+    } else{
+        return [].toString();
+    }
+  }
+
   return "";
 }
